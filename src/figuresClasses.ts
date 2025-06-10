@@ -15,7 +15,14 @@ export class Triangle implements Figure {
     public b: number = 0,
     public c: number = 0,
   ) {
-    if (a <= 0 || b <= 0 || c <= 0 || a + b <= c || a + c <= b || b + c <= a) {
+    if (
+      this.a <= 0 ||
+      this.b <= 0 ||
+      this.c <= 0 ||
+      this.a + this.b <= this.c ||
+      this.a + this.c <= this.b ||
+      this.b + this.c <= this.a
+    ) {
       throw new Error();
     }
   }
@@ -35,7 +42,7 @@ export class Circle implements Figure {
     public color: Color,
     public radius: number = 0,
   ) {
-    if (radius <= 0) {
+    if (this.radius <= 0) {
       throw new Error();
     }
   }
